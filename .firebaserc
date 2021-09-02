@@ -1,9 +1,9 @@
 {
   "targets": {
-    "airbnb-161d6": {
+    "airbandb-f7164": {
       "hosting": {
         "deploy": [
-          "airbnb-161d6"
+          "airbandb-f7164"
         ]
       }
     }

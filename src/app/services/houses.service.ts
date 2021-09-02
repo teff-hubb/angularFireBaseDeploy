@@ -27,20 +27,21 @@ export class HousesService {
   delete(pId: string): Promise<any> {
     return new Promise((resolve, reject) => {
       try {
-         this.collection.doc(pId).delete();
-        resolve({ success: 'ok'});
+        this.collection.doc(pId).delete();
+        resolve({ success: 'ok' });
       } catch (err) {
         reject(err);
       }
     })
   }
-  create(pHouse: House): Promise<any> {
+
+  create(pHouse: House, pId: string = ""): Promise<any> {
     return new Promise((resolve, reject) => {
       try {
         //resolve, recibo una house pero sin id, firestore tiene un metodo que me permite crear un id y asignarselo a nuevo elemento (ID de documento);
-        const id = this.firestore.createId();
+        const id = (pId === "") ? this.firestore.createId() : pId;
         pHouse.id = id;
-        this.collection.doc(id).set(pHouse);
+         this.collection.doc(id).set(pHouse);
         resolve({ success: 'ok' });
       } catch (err) {
         //reject

@@ -15,7 +15,9 @@ export class NewHouseComponent implements OnInit {
     private housesService: HousesService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) {
+    this.houseUpdate.ciudad = "";
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {

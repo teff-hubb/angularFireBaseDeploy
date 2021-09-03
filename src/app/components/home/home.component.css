@@ -1,0 +1,13 @@
+agm-map{
+  width:100%;
+  height: 250px;;
+}
+.tituloMarket{
+  font-size: 80%;
+  font: weight 400;
+  color: lightcoral;
+}
+.thumb{
+  width:150px;
+  height: auto;
+}
